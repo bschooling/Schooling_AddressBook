@@ -1,5 +1,7 @@
 package address.data;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AddressBook {
 
@@ -19,6 +21,26 @@ public class AddressBook {
     public void list(){
         for (AddressEntry i : addressEntryList) {
             System.out.println(i);
+        }
+    }
+
+
+    public void init(String filename) {
+        File input_file = new File(filename);
+        Scanner inputScanner = new Scanner (input_file);
+
+        while (inputScanner.hasNextLine()) {
+            AddressEntry newAddress = new AddressEntry(
+                    inputScanner.nextLine(),
+                    inputScanner.nextLine(),
+                    inputScanner.nextLine(),
+                    inputScanner.nextLine(),
+                    inputScanner.nextLine(),
+                    Integer.valueOf(inputScanner.nextLine()),
+                    inputScanner.nextLine(),
+                    inputScanner.nextLine()
+            );
+            this.add(newAddress);
         }
     }
 

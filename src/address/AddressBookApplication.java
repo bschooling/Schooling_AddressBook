@@ -2,6 +2,8 @@ package address;
 
 import address.data.AddressBook;
 import address.data.AddressEntry;
+import java.io.*;
+import java.util.Scanner;
 
 /** main AddressBookApplication: purpose is to invoke some methods of the Menu class
  **/
@@ -38,6 +40,7 @@ class AddressBookApplication {
     public static void main(String args[]) {
 
         AddressBook ab = new AddressBook();
+        ab.init("AddressInputDataFile.txt");
         initAddressBookExercise(ab);
 
 
