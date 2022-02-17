@@ -10,38 +10,15 @@ import java.util.Scanner;
 
 class AddressBookApplication {
 
-    static void initAddressBookExercise(AddressBook ab){
-
-        AddressEntry newAddressOne = new AddressEntry(
-                "Anna",
-                "Smith",
-                "Main St.",
-                "Oakland",
-                "California",
-                94611,
-                "(510) 746-1347",
-                "annasmith@gmail.com");
-        AddressEntry newAddressTwo = new AddressEntry(
-                "Caty",
-                "Green",
-                "Sandy St.",
-                "Oakland",
-                "California",
-                94611,
-                "(510) 472-0526",
-                "acatygreen@gmail.com");
-
-        ab.add(newAddressOne);
-        ab.add(newAddressTwo);
-
-        ab.list();
-    }
-
     public static void main(String args[]) {
 
         AddressBook ab = new AddressBook();
-        ab.init("AddressInputDataFile.txt");
-        initAddressBookExercise(ab);
+        try {
+            ab.init("src/address/AddressInputDataFile.txt");
+        } catch (Exception ex) {
+            System.out.println("Failed to Read File");
+        }
+        ab.list();
 
 
 

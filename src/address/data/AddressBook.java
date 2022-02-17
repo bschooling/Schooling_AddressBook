@@ -1,5 +1,6 @@
 package address.data;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,9 +26,9 @@ public class AddressBook {
     }
 
 
-    public void init(String filename) {
-        File input_file = new File(filename);
-        Scanner inputScanner = new Scanner (input_file);
+    public void init(String filename) throws FileNotFoundException {
+        File file = new File(filename);
+        Scanner inputScanner = new Scanner (file);
 
         while (inputScanner.hasNextLine()) {
             AddressEntry newAddress = new AddressEntry(
