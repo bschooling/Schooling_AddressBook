@@ -66,7 +66,7 @@ public class AddressEntry implements Comparable<AddressEntry> {
 
     /**
      * FirstName setter
-     * @param
+     * @param firstName
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -192,6 +192,12 @@ public class AddressEntry implements Comparable<AddressEntry> {
         return this.email;
     }
 
+    /**
+     * comparison for AddressBook objects.  Compares lastName
+     * if lastName is same, compares firstName
+     * @param another
+     * @return
+     */
     public int compareTo(AddressEntry another) {
         int compareValue = this.lastName.compareTo(another.lastName);
         if (compareValue == 0) {
